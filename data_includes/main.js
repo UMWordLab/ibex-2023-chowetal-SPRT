@@ -196,7 +196,7 @@ var items = [
  
    ["consent", "Form", { html: { include: "consent.html" } } ],
  
-   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next item."}]
+   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next item."}],
 
 ["startpractice", Message, {consentRequired: false,
    html: ["div",
