@@ -38,25 +38,33 @@ newTrial("intro",
         .print()
         .bold(),
 
-    newScale("q1", "Spacebar", "J")
-        .labelsPosition("right")
-        .print(),
+        newScale("q1", "Spacebar", "J")
+            .labelsPosition("right")
+            .print(),
 
     newText("How should you read the sentence")
         .print()
         .bold(),
 
-    newScale("q2", "Out loud", "Silently")
-        .labelsPosition("right")
-        .print(),
+        newScale("q2", "Out loud", "Silently")
+            .labelsPosition("right")
+            .print(),
+
+    newText("How quickly should you advance the words in the sentence to continue reading?")
+        .print()
+        .bold(),
+
+        newScale("q3", "As fast as you can press the key", "Quickly but slow enough to answer the follow-up questions", "Slowly enough to get every answer correct")
+            .labelsPosition("right")
+            .print(),
 
     newText("Will the entire sentence stay on the screen?")
         .print()
         .bold(),
 
-    newScale("q3", "No", "Yes")
-        .labelsPosition("right")
-        .print(),
+        newScale("q4", "No", "Yes")
+            .labelsPosition("right")
+            .print(),
 
     newText("error", "One or more of your responses to the questions above are incorrect")
         .color("red")
