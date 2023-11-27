@@ -11,7 +11,7 @@ var shuffleSequence = seq("consent", "IDentry", "demo", "intro",
                             "starter",
 
                             // trials named _dummy_ will be excluded by following:
-                            seq(randomize(anyOf(
+                            sepWith("sep", randomize(anyOf(
                                 startsWith("chow"),
                                 startsWith("kutas")
                                 ))),
@@ -195,10 +195,8 @@ var items = [
    ["consent", "Form", { html: { include: "consent.html" } } ],
  
  
- 
-
- 
- 
+   ["sep", "Separator"],
+          // , {normal: "Please wait for the next item"}
 ["startpractice", Message, {consentRequired: false,
    html: ["div",
           ["p", "First you can do three practice sentences."]
