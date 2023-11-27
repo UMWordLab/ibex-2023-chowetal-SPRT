@@ -11,9 +11,10 @@ var shuffleSequence = seq("consent", "IDentry", "demo", "intro",
                             "starter",
 
                             // trials named _dummy_ will be excluded by following:
-                            sepWith("sep", 
-                                randomize(anyOf(startsWith("chow"),
-                                startsWith("kutas")))),
+                            seq(randomize(anyOf(
+                                startsWith("chow"),
+                                startsWith("kutas")
+                                ))),
 
                             "sendresults",
                             "completion"
