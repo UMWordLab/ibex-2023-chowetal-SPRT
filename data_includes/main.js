@@ -79,7 +79,10 @@ newTrial("intro",
             ).and(getScale("q2").test.selected("Silently").failure(
                 getText("error")
                     .print()
-            )).and(getScale("q3").test.selected("No").failure(
+            )).and(getScale("q3").test.selected("Quickly but slow enough to answer the follow-up questions").failure(
+                getText("error")
+                    .print()
+            )).and(getScale("q4").test.selected("No").failure(
                 getText("error")
                     .print()
             ))
@@ -203,7 +206,7 @@ var items = [
  
    ["consent", "Form", { html: { include: "consent.html" } } ],
  
-   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next item."}],
+   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next sentence."}],
 
 ["startpractice", Message, {consentRequired: false,
    html: ["div",
