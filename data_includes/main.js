@@ -1,5 +1,5 @@
 PennController.ResetPrefix(null);
-DebugOff();
+//DebugOff();
 
  
 var shuffleSequence = seq("consent", "IDentry", "demo", "intro",
