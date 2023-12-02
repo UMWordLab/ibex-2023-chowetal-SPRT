@@ -5,7 +5,7 @@ PennController.ResetPrefix(null);
 var shuffleSequence = seq("consent", "IDentry", "demo", "intro",
                             "startpractice",
                                             
-                            seq("practice"),
+                            sepWith("seppractice", "practice"),
                         
                             "setcounter",
                             "starter",
@@ -21,7 +21,7 @@ var shuffleSequence = seq("consent", "IDentry", "demo", "intro",
                          );
  
 newTrial("IDentry",
-   newText("instr", "Please enter your Prolific ID:").print()
+   newText("instr", "Please enter your uniqname:").print()
    ,
    newHtml("partpage", "<input type='text' id='partID' name='participant ID' min='1' max='120'>").print()
    ,
@@ -165,8 +165,7 @@ Template("experiment.csv", row => {
                 .print()
                 .log()
                 .wait()
-                :null
-            
+               :null   
         )
        .log("counter", __counter_value_from_server__)
        .log("label", row.label)
@@ -208,12 +207,14 @@ var items = [
  
    ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next sentence."}],
 
+   ["seppractice", "Separator", {transfer: 1000, normalMessage: "Correct response! Please wait for the next sentence.", errorMessage: "Incorrect response."}],
+
 ["startpractice", Message, {consentRequired: false,
    html: ["div",
           ["p", "First you can do three practice sentences."]
          ]}],
  
-["practice", "DashedSentenceAlt", {s:"The carpenter ordered food from the restaurant"},
+["practice", "DashedSentenceAlt", {s:"The carpenter ordered food from the restaurant."},
             "QuestionAlt",  
             {as: [["f", "A restaurant"], ["j","A store"]],
             hasCorrect: 0,
@@ -222,7 +223,7 @@ var items = [
             presentHorizontally: true}
 ],
 
-["practice", "DashedSentenceAlt", {s:"The man from the newspaper despised pencils"},
+["practice", "DashedSentenceAlt", {s:"The man from the newspaper despised pencils."},
             "QuestionAlt",  
             {as: [["f", "Pencils"], ["j","Newspapers"]],
             hasCorrect: 0,
@@ -232,15 +233,23 @@ var items = [
 
 ],
   
-["practice","DashedSentenceAlt", {s:"The butler ripples from the forgetful children"},
+["practice","DashedSentenceAlt", {s:"The babysitter scolded the forgetful children."},
             "QuestionAlt",{  
-            as: [["f", "A mom"], ["j","A butler"]],
+            as: [["f", "A dad"], ["j","A babysitter"]],
             hasCorrect: 1,
-            q: "Who ripples from some children?",
+            q: "Who scolded the children?",
             randomOrder: false,
             presentHorizontally: true}
 ],
- 
+
+["practice","DashedSentenceAlt", {s:"None of the zookeepers saw the tiger escape from its enclosure."},
+            "QuestionAlt",{  
+            as: [["f", "A lion"], ["j","A tiger"]],
+            hasCorrect: 1,
+            q: "What animal escaped?",
+            randomOrder: false,
+            presentHorizontally: true}
+],
  
 ["starter", Message, {consentRequired: false,
    html: ["div",
