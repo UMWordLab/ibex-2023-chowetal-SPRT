@@ -155,8 +155,7 @@ Template("experiment.csv", row => {
                                       as: [["f", row.answerchoice0], ["j",row.answerchoice1]],
                                       // Needs to be cast as Num or else controller won't work
                                       // is expecting a Number
-                                      // removing hasCorrect to avoid error responses
-                                      //hasCorrect: Number(row.correct_response),
+                                      hasCorrect: Number(row.correct_response),
                                       q: row.comprehension_question,
                                       randomOrder: false,
                                       presentHorizontally: true,
@@ -205,7 +204,7 @@ var items = [
  
    ["consent", "Form", { html: { include: "consent.html" } } ],
  
-   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Response timed out. Please wait for the next sentence."}],
+   ["sep", "Separator", {transfer: 1000, normalMessage: "Please wait for the next sentence.", errorMessage: "Please wait for the next sentence."}],
 
    ["seppractice", "Separator", {transfer: 1000, normalMessage: "Correct response! Please wait for the next sentence.", errorMessage: "Incorrect response."}],
 
